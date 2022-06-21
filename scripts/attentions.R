@@ -54,8 +54,8 @@ attentions <- bind_rows(attentions2021, attentions2022)
 plot_attentions <- attentions |>
   ggplot(aes(week, attentions, color = factor(year))) +
   geom_path(size = 2) +
+  scale_color_manual(values = c("#f72585", "#7209b7")) +
   scale_y_continuous(labels = scales::comma) +
-  # geom_smooth(se = FALSE) +
   theme_bw() +
   labs(
     title = "Atenciones de urgencia por causas respiratorias. Chile",
